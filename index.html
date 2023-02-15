@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Put your description here.">
+    <link rel="manifest" href="/manifest.json">
     <title>火侠</title>
   </head>
   <style>
@@ -117,6 +118,13 @@
           alert("抱歉，用户或密码输入错误！");
         }
       });
+    </script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("sw.js");
+        });
+      }
     </script>
   </body>
 </html>
